@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tittle:</strong>
+  <%= @post.tittle %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+
+<p>
+  <strong>image:</strong>
+  <%= image_tag @post.image.url %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post),class: "btn btn-warning" %> |
+<%= link_to 'Back', posts_path, class: "btn btn-danger" %>

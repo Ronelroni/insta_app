@@ -1,0 +1,14 @@
+<h3> CONFIRMATION</h3>
+<%= form_with(model: @post, url: posts_path, local: true) do |form| %>
+  <%= form.hidden_field :tittle %>
+  <%= form.hidden_field :content %>
+  <p>Title:<%= @post.tittle %></p>
+  <p>Content:<%= @post.content %></p>
+  <p>image:<%= image_tag(@post.image.url) if @post.image && @post.image.url %></p>
+  <%= form.hidden_field :image_cache %><br>
+  <%= form.submit  "confirmer" %>
+<% end %>
+<%= form_with(model:@post, url:new_post_path, local:true, method:"get") do |form| %>
+    <%= form.hidden_field :image_cache %>
+    <%= form.submit "Retour", name: "back" %>
+  <% end %>
