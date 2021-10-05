@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<tbody>
+      <tr>
+        <td><%= image_tag post.post.image.url %></td>
+        <td><%= post.post.tittle %></td>
+        <td><%= post.post.content %></td>
+      </tr>
+    <% end %>
+</tbody>
+
+<%= link_to 'Back', favorites_path %>

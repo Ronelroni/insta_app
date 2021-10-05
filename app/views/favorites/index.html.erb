@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mes Favoris</h1>
+
+<tbody>
+    <% @favorites.each do |post| %>
+      <br>
+        <td><%= image_tag post.post.image.url %></td>
+        <td><%= post.post.tittle %></td>
+        <td><%= post.post.content %></td>
+      </br>
+    <% end %>
+</tbody></br>
+
+<%= link_to 'Back', posts_path %>
+
+
+
+
+
+
+
+
+
+      
