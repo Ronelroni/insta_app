@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @favorite = current_user.favorites.find_by(post_id: @post.id)
   end
 
   # GET /posts/new
@@ -25,13 +26,12 @@ class PostsController < ApplicationController
       @post.user_id=current_user.id
       if params[:back]
         render :new
-      else
-        if @post.save
-             #PostMailer.post_mail(@post).deliver 
+      elsif @post.save
+             PostMailer.post_mail(current_user).deliver 
              redirect_to posts_path, notice: "J'ai créé un post!"
-        else
+      else
         render :new 
-        end 
+        
       end
     end
 

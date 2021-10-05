@@ -17,9 +17,9 @@ class UsersController < ApplicationController
             render :new
           end
       end
-      def show
-        @user = User.find(params[:id])
-      end
+    def show
+      @user = User.find(params[:id])
+    end
 
      # PATCH/PUT /users/1 or /users/1.json
     def update

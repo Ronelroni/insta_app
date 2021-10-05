@@ -7,12 +7,8 @@ Rails.application.routes.draw do
   end
   root "posts#index"
   resources :sessions, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :show]
-  resources :users do
-    collection do
-      post :confirm
-    end
-  end
-  mount LetterOpenerWeb::Engine, at: "/letter_opener_web" if Rails.env.development?
+  resources :users
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :favorites
 end

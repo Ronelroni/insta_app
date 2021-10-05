@@ -1,6 +1,6 @@
 class PostMailer < ApplicationMailer
-    def post_mail(post)
-        @post = post
-        mail to: "ronelroni01@gmail.com", subject: "Email de confirmation de la demande"
+    def post_mail(user)
+        @user = user
+        mail to: user.email, subject: "Email de confirmation de la demande"
       end
 end

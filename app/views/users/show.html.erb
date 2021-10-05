@@ -1,6 +1,8 @@
 <h1>Compte: <%= @user.name %></h1>
 <p>Adresse mail: <%= @user.email %></p>
 <strong>Photo de Profil:</strong>
+<% if @user.image.url %>
 <%= image_tag @user.image.url %>|
+<% end %>
 <%= link_to 'Edit', edit_user_path(@user),class: "btn btn-warning" %> |
 
