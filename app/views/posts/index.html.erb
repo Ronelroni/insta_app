@@ -21,7 +21,7 @@
         <td><%= link_to 'Show', post %></td>
         <% if post.user == current_user %>
           <td><a href = "<%= edit_post_path(post.id)%>"> Edit </a></td>
-          <td><a href = "<%= post_path(post.id)%>"  data-confirm="Etes-vous surs?" data-    method="DELETE">Destroy</a></td>
+          <td><a href = "<%= post_path(post.id)%>"  data-confirm="Etes-vous surs?" data-method="DELETE">Destroy</a></td>
         <% end %>
       </tr>
     <% end %>
