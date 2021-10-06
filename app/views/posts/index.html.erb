@@ -19,8 +19,10 @@
         <td><%= post.content %></td>
         <td><%= post.user.name %></td>
         <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if post.user == current_user %>
+          <td><a href = "<%= edit_post_path(post.id)%>"> Edit </a></td>
+          <td><a href = "<%= post_path(post.id)%>"  data-confirm="Etes-vous surs?" data-    method="DELETE">Destroy</a></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
